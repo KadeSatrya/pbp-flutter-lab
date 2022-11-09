@@ -1,6 +1,5 @@
 # Tugas 7
-Kade Satrya Noto Sadharma
-2106752376 / PBP C
+Kade Satrya Noto Sadharma / 2106752376 / PBP C
 
 # A. Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
 Stateless widget adalah widget yang tidak pernah berubah. Sementara itu, stateful widget adalah widget yang berubah sesuai dengan perubahan state yang dihasilkan oleh suatu event.
