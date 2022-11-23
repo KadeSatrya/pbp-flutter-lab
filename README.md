@@ -67,3 +67,32 @@ Navigator menggunakan stack untuk menentukan halaman yang ditunjukkan. Ketika me
 6. Membuat file budget_model yang berisi model penyimpanan budget dan listbudget pada data_budget yang akan menyimpan objek-objek budget tersebut
 7. Menambahkan TextButton pada form yang akan membuat objek budget baru yang akan disimpan dalam listbudget
 8. Memetakan data-data budget ke dalam card-card yang berada dalam satu kolom untuk menunjukkannya pada data_budget
+
+# Tugas 9
+
+# A. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Ya, hal tersebut bisa dilakukan. Namun, kadang bisa terjadi error karena ketidakcocokan tipe data.
+
+# B. Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+1. Navigator untuk routing ke halaman watchlist dan detail watchlist
+2. FutureBuilder untuk menampilkan judul-judul watchlist yang bisa diklik untuk mengarahkan ke halaman detail
+3. CircularProgressIndicator untuk menampilkan loading saat mengambil data dari web pada halaman watchlist
+4. ElevatedButton untuk membuat tombol `back` pada halaman detail watchlist
+
+# C. Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+1. Melakukan request ke website yang diinginkan untuk mendapatkan data
+2. Data didecode menjadi json
+3. Data dalam bentuk json diubah ke dalam model yang dibuat
+4. Model yang sudah dibuat dipetakan ke dalam widget untuk ditampilkan
+
+# D. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1. Membuat file watchlist.dart yang akan menampilkan daftar judul watchlist
+2. Menambahkan package http pada flutter dan mengubah AndroidManifest.xml agar aplikasi bisa mengakses internet
+3. Menambahkan ListTile ke setiap drawer yang akan routing ke file watchlist.dart
+4. Membuat file watchlist_model yang akan menjadi model object watchlist
+5. Melakukan fetch data dari `https://pbp-kd-tugas.herokuapp.com/mywatchlist/json/` pada watchlist.dart
+6. Data json pada watchlist.dart diubah menjadi model watchlist yang sudah dibuat
+7. Memetakan judul setiap watchlist menjadi ListView yang ketika diklik akan routing ke file detail masing-masing watchlist dengan passing data berupa field-field dari watchlist (dengan navigator.push karena ingin bisa kembali ke halaman watchlist)
+8. Membuat file watchlist_detail.dart yang akan menampilkan detail masing-masing watchlist
+9. Menampilkan field-field object watchlist dalam suatu Column
+10. Menambahkan button pada halaman detail yang melakukan navigator.pop() sehingga kembali ke halaman watchlist

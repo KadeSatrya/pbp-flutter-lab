@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:counter_7/budget_model.dart';
 import 'main.dart';
 import 'data_budget.dart';
+import 'package:counter_7/watchlist.dart';
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({super.key});
@@ -50,6 +51,16 @@ class _MyFormPageState extends State<MyFormPage> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => const MyDataPage()),
+                  );
+                },
+              ),
+              ListTile(
+                title: const Text('My Watch List'),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyWatchList()),
                   );
                 },
               ),
